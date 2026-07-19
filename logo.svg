@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background circle -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C1810"/>
+      <stop offset="100%" style="stop-color:#3C2A21"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D76E"/>
+      <stop offset="50%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer decorative ring -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="8"/>
+  
+  <!-- Inner ornate border -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.6"/>
+  <circle cx="200" cy="200" r="168" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Decorative dots around -->
+  <g fill="#D4AF37" opacity="0.8">
+    <circle cx="200" cy="30" r="4"/>
+    <circle cx="200" cy="370" r="4"/>
+    <circle cx="30" cy="200" r="4"/>
+    <circle cx="370" cy="200" r="4"/>
+    <circle cx="80" cy="80" r="3"/>
+    <circle cx="320" cy="80" r="3"/>
+    <circle cx="80" cy="320" r="3"/>
+    <circle cx="320" cy="320" r="3"/>
+  </g>
+  
+  <!-- Kulhad (clay cup) -->
+  <g transform="translate(200, 175)">
+    <!-- Cup body -->
+    <path d="M-45,10 Q-48,50 -35,75 L35,75 Q48,50 45,10 Z" fill="#C45C26" stroke="#8B4513" stroke-width="2"/>
+    <!-- Cup rim -->
+    <ellipse cx="0" cy="10" rx="48" ry="12" fill="#E07A3D" stroke="#8B4513" stroke-width="1.5"/>
+    <!-- Inner chai liquid -->
+    <ellipse cx="0" cy="12" rx="38" ry="8" fill="#D2691E"/>
+    <ellipse cx="0" cy="10" rx="35" ry="6" fill="#F4A460" opacity="0.7"/>
+    <!-- Decorative pattern on cup -->
+    <path d="M-30,30 Q0,40 30,30" fill="none" stroke="#8B4513" stroke-width="1.5" opacity="0.6"/>
+    <path d="M-25,45 Q0,55 25,45" fill="none" stroke="#8B4513" stroke-width="1" opacity="0.5"/>
+    <!-- Steam -->
+    <path d="M-15,-5 Q-20,-25 -10,-40 Q0,-30 5,-45" fill="none" stroke="#F5F5DC" stroke-width="3" stroke-linecap="round" opacity="0.8">
+      <animate attributeName="d" values="M-15,-5 Q-20,-25 -10,-40 Q0,-30 5,-45;M-15,-5 Q-18,-28 -8,-42 Q2,-32 8,-48;M-15,-5 Q-20,-25 -10,-40 Q0,-30 5,-45" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M5,-5 Q10,-30 0,-50 Q-5,-35 8,-55" fill="none" stroke="#FFF8DC" stroke-width="2.5" stroke-linecap="round" opacity="0.7">
+      <animate attributeName="d" values="M5,-5 Q10,-30 0,-50 Q-5,-35 8,-55;M5,-5 Q12,-32 2,-52 Q-3,-38 10,-58;M5,-5 Q10,-30 0,-50 Q-5,-35 8,-55" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M20,-5 Q25,-22 15,-38" fill="none" stroke="#F5F5DC" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Text: Chai -->
+  <text x="200" y="95" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="url(#goldGrad)" filter="url(#glow)">Chai</text>
+  
+  <!-- Text: चाय बनारसिया -->
+  <text x="200" y="280" text-anchor="middle" font-family="Noto Sans Devanagari, Arial, sans-serif" font-size="28" font-weight="600" fill="#F5D76E">चाय बनारसिया</text>
+  
+  <!-- Text: Multicuisine Restaurant -->
+  <text x="200" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#D4AF37" letter-spacing="1">Multicuisine Restaurant</text>
+  
+  <!-- Small decorative line -->
+  <line x1="120" y1="295" x2="280" y2="295" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+</svg>
