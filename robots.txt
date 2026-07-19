@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prakashphiroda314.github.io/chai-banarasiya/sitemap.xml
