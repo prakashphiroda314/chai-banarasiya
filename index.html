@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Banarasiya | Banaras Theme Multicuisine Restaurant | Jaipur</title>
+    <link rel="canonical" href="https://chaibanarasiya.in/">
+    <meta name="description" content="Experience the soul of Banaras in Jaipur. Authentic Banarasi flavors, multicuisine delights, and the perfect cup of chai. Breakfast, Lunch & Dinner. Open 8:30 AM - 11:30 PM.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: '#FF9933',
+                        gold: '#D4AF37',
+                        cream: '#FDF6E3',
+                        terracotta: '#C45C26',
+                        deepbrown: '#3C2A21',
+                        warmbeige: '#F5E6D3',
+                        banarasblue: '#1A5276',
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif'],
+                        hindi: ['Noto Sans Devanagari', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(60,42,33,0.92) 0%, rgba(196,92,38,0.85) 50%, rgba(255,153,51,0.75) 100%),
+                        url('https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070') center/cover no-repeat;
+        }
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            height: 2px;
+        }
+        .menu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -10px rgba(60,42,33,0.25);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        .steam {
+            animation: steam 3s ease-in-out infinite;
+        }
+        @keyframes steam {
+            0%, 100% { opacity: 0.6; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-8px) scale(1.05); }
+        }
+    </style>
+</head>
+<body class="font-body bg-cream text-deepbrown antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-deepbrown/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="flex items-center gap-3">
+                    <img src="logo.svg" alt="Chai Banarasiya Logo" class="h-14 w-14 rounded-full object-cover border-2 border-gold shadow-md bg-deepbrown">
+                    <div>
+                        <span class="font-display text-xl text-gold tracking-wide">Chai Banarasiya</span>
+                        <p class="text-xs text-warmbeige/80 hidden sm:block">Banaras in Jaipur</p>
+                    </div>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-warmbeige hover:text-gold transition">Home</a>
+                    <a href="#about" class="nav-link text-warmbeige hover:text-gold transition">About</a>
+                    <a href="#menu" class="nav-link text-warmbeige hover:text-gold transition">Menu</a>
+                    <a href="#gallery" class="nav-link text-warmbeige hover:text-gold transition">Gallery</a>
+                    <a href="#visit" class="nav-link text-warmbeige hover:text-gold transition">Visit Us</a>
+                    <a href="tel:+918769653769" class="bg-saffron hover:bg-terracotta text-white px-5 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg">
+                        Call Now
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gold focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-deepbrown border-t border-gold/20">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-warmbeige hover:text-gold py-2">Home</a>
+                <a href="#about" class="block text-warmbeige hover:text-gold py-2">About</a>
+                <a href="#menu" class="block text-warmbeige hover:text-gold py-2">Menu</a>
+                <a href="#gallery" class="block text-warmbeige hover:text-gold py-2">Gallery</a>
+                <a href="#visit" class="block text-warmbeige hover:text-gold py-2">Visit Us</a>
+                <a href="tel:+918769653769" class="block bg-saffron text-white text-center py-3 rounded-full font-medium mt-2">Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center relative pt-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deepbrown/40"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div class="floating mb-6">
+                <img src="logo.svg" alt="Chai Banarasiya" class="w-40 h-40 mx-auto rounded-full border-4 border-gold shadow-2xl object-cover bg-deepbrown">
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold mb-4 tracking-tight">
+                Chai Banarasiya
+            </h1>
+            <p class="font-hindi text-2xl sm:text-3xl text-gold mb-3 tracking-wide">
+                सुबह बनारस की, शाम यादों की
+            </p>
+            <p class="text-xl sm:text-2xl text-warmbeige/95 mb-2 font-light">
+                Banaras Theme Multicuisine Restaurant
+            </p>
+            <p class="text-lg text-warmbeige/80 mb-10 max-w-2xl mx-auto">
+                Where every sip of chai tells a story of Banaras, and every plate brings the vibrant streets of Varanasi to Jaipur.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#menu" class="bg-gold hover:bg-saffron text-deepbrown font-semibold px-8 py-3.5 rounded-full transition shadow-lg hover:shadow-xl text-lg">
+                    Explore Menu
+                </a>
+                <a href="#visit" class="border-2 border-gold text-gold hover:bg-gold hover:text-deepbrown font-semibold px-8 py-3.5 rounded-full transition text-lg">
+                    Find Us
+                </a>
+            </div>
+            <div class="mt-12 flex flex-wrap justify-center gap-6 text-warmbeige/90 text-sm sm:text-base">
+                <div class="flex items-center gap-2">
+                    <span class="text-gold text-xl">☀️</span>
+                    <span>Breakfast • Lunch • Dinner</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-gold text-xl">🕐</span>
+                    <span>Open 8:30 AM – 11:30 PM</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-gold text-xl">📍</span>
+                    <span>Jagatpura, Jaipur</span>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gold/80 hover:text-gold">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-28 bg-warmbeige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-saffron font-medium tracking-widest uppercase text-sm mb-3">Our Story</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-deepbrown font-bold mb-4">A Slice of Banaras in Jaipur</h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-deepbrown/90">
+                        <strong class="text-terracotta">Chai Banarasiya</strong> is more than just a multicuisine restaurant — it's a warm celebration of Banaras' culture, traditional flavors, and vibrant ambiance.
+                    </p>
+                    <p class="text-lg leading-relaxed text-deepbrown/90">
+                        Founded with the idea of blending heritage with hospitality, we invite you to enjoy every sip and story under our inviting roof. Our interiors are inspired by the soulful lanes of Varanasi — designed to evoke nostalgia, warmth, and joy.
+                    </p>
+                    <p class="text-lg leading-relaxed text-deepbrown/90">
+                        From authentic Banarasi masalas and street-style flair to carefully crafted multicuisine dishes, every plate captures the true essence of Banaras right here in the heart of Jaipur.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-gold/20">
+                            <p class="font-semibold text-terracotta">100% Vegetarian</p>
+                        </div>
+                        <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-gold/20">
+                            <p class="font-semibold text-terracotta">Outdoor Seating</p>
+                        </div>
+                        <div class="bg-white rounded-xl px-5 py-3 shadow-sm border border-gold/20">
+                            <p class="font-semibold text-terracotta">Family Friendly</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-deepbrown rounded-2xl p-8 text-center shadow-xl">
+                        <div class="steam text-6xl mb-4">☕</div>
+                        <h3 class="font-display text-2xl text-gold mb-3">Savor the Tradition</h3>
+                        <p class="text-warmbeige/90 italic text-lg mb-6">
+                            "Where every cup tells a story"
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-3xl font-bold text-saffron">4.3+</p>
+                                <p class="text-sm text-warmbeige/70">Rating</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-saffron">₹500</p>
+                                <p class="text-sm text-warmbeige/70">For Two</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-saffron">15+</p>
+                                <p class="text-sm text-warmbeige/70">Hours Open</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 md:py-28 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-saffron font-medium tracking-widest uppercase text-sm mb-3">Taste of Banaras</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-deepbrown font-bold mb-4">Our Specialties</h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+                <p class="text-deepbrown/70 max-w-2xl mx-auto text-lg">
+                    A curated selection of Banarasi classics, fusion bites, and multicuisine favorites — all pure vegetarian.
+                </p>
+            </div>
+
+            <!-- Menu Categories -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Chai & Beverages -->
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-md transition duration-300 border border-gold/10">
+                    <div class="h-40 bg-gradient-to-br from-terracotta to-saffron flex items-center justify-center">
+                        <span class="text-6xl">🍵</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-deepbrown mb-4">Chai & Beverages</h3>
+                        <ul class="space-y-3 text-deepbrown/80">
+                            <li class="flex justify-between"><span>Banarasi Masala Chai</span><span class="text-terracotta font-medium">₹40</span></li>
+                            <li class="flex justify-between"><span>Kulhad Special Chai</span><span class="text-terracotta font-medium">₹50</span></li>
+                            <li class="flex justify-between"><span>Adrak Elaichi Chai</span><span class="text-terracotta font-medium">₹45</span></li>
+                            <li class="flex justify-between"><span>Blue Lagoon Mocktail</span><span class="text-terracotta font-medium">₹120</span></li>
+                            <li class="flex justify-between"><span>Fresh Lime Soda</span><span class="text-terracotta font-medium">₹70</span></li>
+                            <li class="flex justify-between"><span>Banarasi Lassi</span><span class="text-terracotta font-medium">₹90</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Starters & Bites -->
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-md transition duration-300 border border-gold/10">
+                    <div class="h-40 bg-gradient-to-br from-deepbrown to-terracotta flex items-center justify-center">
+                        <span class="text-6xl">🥟</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-deepbrown mb-4">Starters & Bites</h3>
+                        <ul class="space-y-3 text-deepbrown/80">
+                            <li class="flex justify-between"><span>Mushroom 65 (Banarasi Tadka)</span><span class="text-terracotta font-medium">₹180</span></li>
+                            <li class="flex justify-between"><span>Crispy Paneer 65</span><span class="text-terracotta font-medium">₹190</span></li>
+                            <li class="flex justify-between"><span>Banarasi Aloo Tikki Chaat</span><span class="text-terracotta font-medium">₹120</span></li>
+                            <li class="flex justify-between"><span>Sattu Kachori (2 pcs)</span><span class="text-terracotta font-medium">₹100</span></li>
+                            <li class="flex justify-between"><span>Honey Chilli Potato</span><span class="text-terracotta font-medium">₹150</span></li>
+                            <li class="flex justify-between"><span>Veg Spring Rolls</span><span class="text-terracotta font-medium">₹140</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Course -->
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-md transition duration-300 border border-gold/10">
+                    <div class="h-40 bg-gradient-to-br from-saffron to-gold flex items-center justify-center">
+                        <span class="text-6xl">🍛</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-deepbrown mb-4">Main Course</h3>
+                        <ul class="space-y-3 text-deepbrown/80">
+                            <li class="flex justify-between"><span>Banarasi Special Thali</span><span class="text-terracotta font-medium">₹280</span></li>
+                            <li class="flex justify-between"><span>Paneer Butter Masala</span><span class="text-terracotta font-medium">₹220</span></li>
+                            <li class="flex justify-between"><span>Banarasi Aloo Dum</span><span class="text-terracotta font-medium">₹180</span></li>
+                            <li class="flex justify-between"><span>Dal Makhani + Rice</span><span class="text-terracotta font-medium">₹200</span></li>
+                            <li class="flex justify-between"><span>Veg Biryani</span><span class="text-terracotta font-medium">₹190</span></li>
+                            <li class="flex justify-between"><span>Kadhai Mushroom</span><span class="text-terracotta font-medium">₹210</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Multicuisine -->
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-md transition duration-300 border border-gold/10">
+                    <div class="h-40 bg-gradient-to-br from-banarasblue to-deepbrown flex items-center justify-center">
+                        <span class="text-6xl">🍝</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-deepbrown mb-4">Multicuisine</h3>
+                        <ul class="space-y-3 text-deepbrown/80">
+                            <li class="flex justify-between"><span>White Sauce Pasta</span><span class="text-terracotta font-medium">₹180</span></li>
+                            <li class="flex justify-between"><span>Veg Schezwan Noodles</span><span class="text-terracotta font-medium">₹160</span></li>
+                            <li class="flex justify-between"><span>Paneer Tikka Sandwich</span><span class="text-terracotta font-medium">₹150</span></li>
+                            <li class="flex justify-between"><span>Loaded Nachos</span><span class="text-terracotta font-medium">₹170</span></li>
+                            <li class="flex justify-between"><span>Veg Manchurian</span><span class="text-terracotta font-medium">₹170</span></li>
+                            <li class="flex justify-between"><span>Cheese Garlic Bread</span><span class="text-terracotta font-medium">₹130</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Breakfast -->
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-md transition duration-300 border border-gold/10">
+                    <div class="h-40 bg-gradient-to-br from-gold to-saffron flex items-center justify-center">
+                        <span class="text-6xl">🥞</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-deepbrown mb-4">Breakfast Specials</h3>
+                        <ul class="space-y-3 text-deepbrown/80">
+                            <li class="flex justify-between"><span>Poha + Chai Combo</span><span class="text-terracotta font-medium">₹90</span></li>
+                            <li class="flex justify-between"><span>Aloo Paratha (2) + Curd</span><span class="text-terracotta font-medium">₹110</span></li>
+                            <li class="flex justify-between"><span>Chole Bhature</span><span class="text-terracotta font-medium">₹140</span></li>
+                            <li class="flex justify-between"><span>Bedmi Poori + Aloo</span><span class="text-terracotta font-medium">₹130</span></li>
+                            <li class="flex justify-between"><span>Maggi Special</span><span class="text-terracotta font-medium">₹80</span></li>
+                            <li class="flex justify-between"><span>Veg Sandwich + Juice</span><span class="text-terracotta font-medium">₹120</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-md transition duration-300 border border-gold/10">
+                    <div class="h-40 bg-gradient-to-br from-terracotta to-deepbrown flex items-center justify-center">
+                        <span class="text-6xl">🍨</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold text-deepbrown mb-4">Desserts & Sweets</h3>
+                        <ul class="space-y-3 text-deepbrown/80">
+                            <li class="flex justify-between"><span>Rabdi Jalebi</span><span class="text-terracotta font-medium">₹100</span></li>
+                            <li class="flex justify-between"><span>Gulab Jamun (2 pcs)</span><span class="text-terracotta font-medium">₹70</span></li>
+                            <li class="flex justify-between"><span>Natural Ice Cream</span><span class="text-terracotta font-medium">₹90</span></li>
+                            <li class="flex justify-between"><span>Malaiyo Inspired</span><span class="text-terracotta font-medium">₹110</span></li>
+                            <li class="flex justify-between"><span>Brownie with Ice Cream</span><span class="text-terracotta font-medium">₹140</span></li>
+                            <li class="flex justify-between"><span>Banarasi Paan (Meetha)</span><span class="text-terracotta font-medium">₹40</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-deepbrown/60 mt-10 text-sm">
+                * Prices are approximate and subject to change. Full menu available at the restaurant. Taxes extra.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 md:py-28 bg-deepbrown">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-gold font-medium tracking-widest uppercase text-sm mb-3">Moments</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-white font-bold mb-4">The Banarasiya Vibe</h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800" alt="Indian Thali" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <p class="text-white font-medium">Banarasi Thali</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?q=80&w=800" alt="Chai" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <p class="text-white font-medium">Perfect Kulhad Chai</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1606491956689-2ea866880067?q=80&w=800" alt="Street Food" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <p class="text-white font-medium">Street Style Bites</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=800" alt="Indian Curry" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <p class="text-white font-medium">Rich Curries</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800" alt="Restaurant Ambience" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <p class="text-white font-medium">Warm Ambience</p>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl aspect-square">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=800" alt="Dessert" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepbrown/80 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                        <p class="text-white font-medium">Sweet Endings</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="https://www.instagram.com/chai_banarasiya/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-gold hover:text-saffron transition font-medium">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    Follow @chai_banarasiya on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit / Contact Section -->
+    <section id="visit" class="py-20 md:py-28 bg-warmbeige">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-saffron font-medium tracking-widest uppercase text-sm mb-3">Come Visit</p>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl text-deepbrown font-bold mb-4">Find Us in Jaipur</h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-md border border-gold/10">
+                        <h3 class="font-display text-2xl font-bold text-deepbrown mb-6">Contact & Hours</h3>
+                        
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-saffron/10 p-3 rounded-full text-saffron">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-deepbrown">Address</p>
+                                    <p class="text-deepbrown/80">C-370, Shankar Colony, Block A,<br>Siddharth Nagar, Jagatpura,<br>Jaipur, Rajasthan 302017</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-saffron/10 p-3 rounded-full text-saffron">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-deepbrown">Phone</p>
+                                    <a href="tel:+918769653769" class="text-terracotta hover:underline text-lg font-medium">+91 87696 53769</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-saffron/10 p-3 rounded-full text-saffron">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-deepbrown">Opening Hours</p>
+                                    <p class="text-deepbrown/80">Everyday: <strong>8:30 AM – 11:30 PM</strong></p>
+                                    <p class="text-sm text-deepbrown/60 mt-1">Breakfast • Lunch • Dinner</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="bg-saffron/10 p-3 rounded-full text-saffron">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-deepbrown">Instagram</p>
+                                    <a href="https://www.instagram.com/chai_banarasiya/" target="_blank" rel="noopener" class="text-terracotta hover:underline">@chai_banarasiya</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://maps.app.goo.gl/SUbq6DXBNkpwtXr97" target="_blank" rel="noopener" class="flex-1 bg-deepbrown hover:bg-terracotta text-white text-center py-4 rounded-xl font-semibold transition shadow-md">
+                            Get Directions
+                        </a>
+                        <a href="tel:+918769653769" class="flex-1 bg-saffron hover:bg-gold text-white text-center py-4 rounded-xl font-semibold transition shadow-md">
+                            Call to Reserve
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Embed Placeholder -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gold/10 h-full min-h-[400px]">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=C-370%20Shankar%20Colony%20Block%20A%20Siddharth%20Nagar%20Jagatpura%20Jaipur%20Rajasthan%20302017&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height:400px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Chai Banarasiya Location">
+                    </iframe>
+                    <div class="p-4 bg-deepbrown text-center">
+                        <p class="text-warmbeige text-sm">C-370, Siddharth Nagar, Jagatpura • Near Getor Jagatpura</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-16 bg-gradient-to-r from-deepbrown via-terracotta to-saffron">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-display text-3xl sm:text-4xl text-white font-bold mb-4">
+                Ready for a Banarasi Experience?
+            </h2>
+            <p class="text-warmbeige text-lg mb-8">
+                Come for the chai, stay for the memories. We can't wait to serve you.
+            </p>
+            <a href="tel:+918769653769" class="inline-block bg-white text-deepbrown font-bold px-10 py-4 rounded-full text-lg hover:bg-gold transition shadow-xl">
+                📞 +91 87696 53769
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deepbrown text-warmbeige py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="logo.svg" alt="Logo" class="h-12 w-12 rounded-full object-cover border border-gold bg-deepbrown">
+                        <span class="font-display text-xl text-gold">Chai Banarasiya</span>
+                    </div>
+                    <p class="text-warmbeige/70 text-sm leading-relaxed">
+                        Bringing the heart of Banaras to Jaipur — one cup of chai and one plate of love at a time.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-gold transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-gold transition">About</a></li>
+                        <li><a href="#menu" class="hover:text-gold transition">Menu</a></li>
+                        <li><a href="#visit" class="hover:text-gold transition">Visit Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gold mb-4">Connect</h4>
+                    <a href="https://www.instagram.com/chai_banarasiya/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold transition mb-3">
+                        Instagram @chai_banarasiya
+                    </a>
+                    <p class="text-sm text-warmbeige/70">Pure Vegetarian • Outdoor Seating<br>Digital Payments Accepted</p>
+                </div>
+            </div>
+            <div class="border-t border-gold/20 pt-8 text-center text-sm text-warmbeige/60">
+                <p>© 2026 Chai Banarasiya Restaurant, Jaipur. All rights reserved.</p>
+                <p class="mt-2 font-hindi text-gold/80">सुबह बनारस की, शाम यादों की ✨</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => menu.classList.add('hidden'));
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+
+<a href="https://wa.me/918769653769" target="_blank" rel="noopener"
+style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;
+padding:14px 18px;border-radius:999px;text-decoration:none;font-family:Arial,sans-serif;
+font-weight:bold;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:9999;">
+💬 WhatsApp Us
+</a>
+
+</body>
+</html>
